@@ -48,7 +48,7 @@ def main():
     st.markdown('<h2 class="fade-in-out">Bonne navigation</h2>', unsafe_allow_html=True)
 
     # Ajouter l'image du drapeau depuis le répertoire local
-    st.image("RCA_image.JPG", caption="  ", use_container_width=True)  # Changement ici
+    st.image("Changement_climatique.JPG", caption="  ", use_container_width=True)  # Changement ici
 
     st.title("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
     st.title("Pour voir le contenu d'une section, il vous suffit de cliquer sur le nom correspondant pour y accéder.")
