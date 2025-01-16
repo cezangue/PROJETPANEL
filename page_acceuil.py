@@ -23,10 +23,17 @@ def display_visualisation():
     st.markdown(
         """
         <style>
-        .main {
-            background-color: #FFFF00; /* Couleur de fond jaune */
+        body {
+            background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
+            background-size: cover; /* Couvre toute la page */
+            background-repeat: no-repeat; /* Ne pas répéter l'image */
             color: black; /* Couleur du texte noire pour contraste */
             font-family: Arial, sans-serif;
+        }
+        .main {
+            background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent pour le contenu */
+            padding: 20px; /* Ajout de padding pour le contenu */
+            border-radius: 10px; /* Arrondir les coins */
         }
         h1 {
             font-size: 2.5em;
