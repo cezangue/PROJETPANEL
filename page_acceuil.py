@@ -8,7 +8,7 @@ st.title("Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace
 
 # Fonction pour créer des onglets
 def display_tabs():
-    tabs = ["Volet de visualisation des indicateurs", "Autre page 1", "Autre page 2"]
+    tabs = ["Volet de visualisation des indicateurs", "Analyse des stationnarité des series", "modelisation en Panel"]
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
     if selected_tab == "Volet de visualisation des indicateurs":
