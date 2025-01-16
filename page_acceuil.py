@@ -3,7 +3,7 @@ import streamlit as st
 # Définir la configuration de la page
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
 
-# Fonction pour afficher le fond et le contenu
+# Fonction pour afficher le fond et le contenu de la page d'accueil
 def display_home_page():
     # Styles CSS pour le fond et le texte
     st.markdown(
@@ -50,7 +50,7 @@ def display_home_page():
 
 # Fonction pour créer des onglets
 def display_tabs():
-    tabs = ["Volet de visualisation des indicateurs", "Analyse des stationnarité des séries", "Modélisation en Panel"]
+    tabs = ["Accueil", "Volet de visualisation des indicateurs", "Analyse des stationnarité des séries", "Modélisation en Panel"]
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
     # Mettre à jour l'état de la page en fonction de l'onglet sélectionné
@@ -58,7 +58,7 @@ def display_tabs():
 
 # Vérifier quelle page afficher
 if 'page' not in st.session_state:
-    st.session_state.page = "accueil"  # Page par défaut
+    st.session_state.page = "Accueil"  # Page par défaut
 
 # Appel de la fonction pour afficher les onglets
 display_tabs()
@@ -66,12 +66,12 @@ display_tabs()
 # Logique pour afficher la page d'accueil ou les autres pages
 if st.session_state.page == "Volet de visualisation des indicateurs":
     import Volet_de_visualisation_des_indicateurs as vvi
-    vvi.display()
+    vvi.display()  # Affiche la page dédiée à la visualisation
 elif st.session_state.page == "Analyse des stationnarité des séries":
     import Analyse_des_stationnarite_des_series as ass
-    ass.display()
+    ass.display()  # Affiche la page dédiée à l'analyse de stationnarité
 elif st.session_state.page == "Modélisation en Panel":
     import Modelisation_en_Panel as mp
-    mp.display()
+    mp.display()  # Affiche la page dédiée à la modélisation
 else:
     display_home_page()  # Afficher la page d'accueil par défaut
