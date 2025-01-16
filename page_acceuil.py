@@ -24,18 +24,17 @@ def display_visualisation():
         """
         <style>
         .stApp {
-            background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
-            background-size: cover; /* Couvre toute la page */
-            background-repeat: no-repeat; /* Ne pas répéter l'image */
-            background-position: top center; /* Positionner l'image en haut */
+            background-color: orange; /* Fond orange */
             color: black; /* Couleur du texte noire pour contraste */
-            height: 100vh; /* Hauteur de la vue complète */
         }
         .main {
-            background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent pour le contenu */
+            background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
+            background-size: cover; /* Couvre toute la section */
+            background-repeat: no-repeat; /* Ne pas répéter l'image */
+            background-position: top center; /* Positionner l'image en haut */
+            height: 100vh; /* Hauteur de la section */
             padding: 20px; /* Ajout de padding pour le contenu */
             border-radius: 10px; /* Arrondir les coins */
-            margin-top: 0; /* Supprimer le margin-top */
         }
         h1 {
             font-size: 2.5em;
