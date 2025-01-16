@@ -5,3 +5,4 @@ streamlit-aggrid
 plotly
 statsmodels
 geopandas
+openpyxl
