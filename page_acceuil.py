@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
 
 # Définir le titre de l'application
-st.title("Page d'Accueil")
+st.title("Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en afrique sub-saharienne")
 
 # Fonction pour créer des onglets
 def display_tabs():
@@ -53,7 +53,7 @@ def display_visualisation():
 
     # Contenu principal
     st.markdown("<div class='main'>", unsafe_allow_html=True)
-    st.markdown("""<h1>TAGNE TCHINDA VOUS SOUHAITE LA BIENVENUE DANS L'ESPACE D'ANALYSE DES EFFETS DU CHANGEMENT CLIMATIQUE EN AFRIQUE SUB-SAHARIENNE</h1>""", unsafe_allow_html=True)
+    st.markdown("""<h1>Nous sommes disponible à l'adresse mail: cezangue@gmail.com</h1>""", unsafe_allow_html=True)
     st.markdown('<h2>Bonne navigation</h2>', unsafe_allow_html=True)
     st.write("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
     st.write("Pour voir le contenu d'une section, il vous suffit de cliquer sur le nom correspondant pour y accéder.")
