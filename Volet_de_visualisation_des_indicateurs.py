@@ -14,13 +14,21 @@ def display():
         st.error(f"Erreur lors du chargement du shapefile : {e}")
         return
 
-    # Chargement des données (remplacez par votre DataFrame réel)
-    # Exemple : df = pd.read_csv("path_to_your_data.csv")
-    # Assurez-vous que df contient les colonnes appropriées
-    df = pd.DataFrame({
-        "Country": ["Algeria", "Nigeria", "Kenya", "South Africa"],
-        "GDP per Capita (Current Prices)": [4000, 3000, 2000, 12000]
-    })
+    # Chargement des données depuis le fichier Excel
+    try:
+        df = pd.read_excel("Panel7TOUT_fichier.xlsx")  # Assurez-vous que le chemin est correct
+    except Exception as e:
+        st.error(f"Erreur lors du chargement du fichier Excel : {e}")
+        return
+
+    # Afficher les colonnes du DataFrame pour vérification
+    st.write("Colonnes disponibles dans le fichier Excel :", df.columns)
+
+    # Assurez-vous que les noms de colonnes correspondent
+    # Vérifiez que 'Country' et 'GDP per Capita (Current Prices)' sont bien présents
+    if 'Country' not in df.columns or 'GDP per Capita (Current Prices)' not in df.columns:
+        st.warning("Les colonnes 'Country' ou 'GDP per Capita (Current Prices)' ne sont pas présentes dans le fichier Excel.")
+        return
 
     # Fusionner les données avec le GeoDataFrame
     try:
@@ -32,9 +40,9 @@ def display():
         st.error(f"Une erreur inattendue est survenue : {e}")
         return
 
-    # Vérifier si la colonne 'GDP per Capita (Current Prices)' existe
+    # Vérifier si la colonne 'GDP per Capita (Current Prices)' existe après la fusion
     if 'GDP per Capita (Current Prices)' not in merged_data.columns:
-        st.warning("La colonne 'GDP per Capita (Current Prices)' n'a pas été trouvée. Veuillez vérifier vos noms de colonnes.")
+        st.warning("La colonne 'GDP per Capita (Current Prices)' n'a pas été trouvée dans les données fusionnées.")
         return
 
     # Création de la carte choroplèthe
