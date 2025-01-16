@@ -28,7 +28,6 @@ def display_visualisation():
             color: black; /* Couleur du texte noire pour contraste */
         }
         .main {
-            background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
             background-size: cover; /* Couvre toute la section */
             background-repeat: no-repeat; /* Ne pas répéter l'image */
             background-position: top center; /* Positionner l'image en haut */
@@ -48,6 +47,9 @@ def display_visualisation():
         """,
         unsafe_allow_html=True,
     )
+
+    # Affichage de l'image pour le dépannage
+    st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
 
     # Contenu principal
     st.markdown("<div class='main'>", unsafe_allow_html=True)
