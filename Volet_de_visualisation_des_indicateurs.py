@@ -24,11 +24,17 @@ def display():
     # Afficher les colonnes du DataFrame pour vérification
     st.write("Colonnes disponibles dans le fichier Excel :", df.columns)
 
-    # Assurez-vous que les noms de colonnes correspondent
-    # Vérifiez que 'Country' et 'GDP per Capita (Current Prices)' sont bien présents
-    if 'Country' not in df.columns or 'GDP per Capita (Current Prices)' not in df.columns:
-        st.warning("Les colonnes 'Country' ou 'GDP per Capita (Current Prices)' ne sont pas présentes dans le fichier Excel.")
+    # Vérification des colonnes
+    if 'Country' not in df.columns:
+        st.warning("La colonne 'Country' n'est pas présente dans le fichier Excel.")
         return
+
+    # Sélecteur pour choisir la variable à visualiser
+    variable_col = st.selectbox(
+        "Sélectionnez la variable à visualiser :",
+        options=[col for col in df.columns if col != 'Country'],
+        index=0  # Par défaut, sélectionner la première variable
+    )
 
     # Fusionner les données avec le GeoDataFrame
     try:
@@ -40,9 +46,9 @@ def display():
         st.error(f"Une erreur inattendue est survenue : {e}")
         return
 
-    # Vérifier si la colonne 'GDP per Capita (Current Prices)' existe après la fusion
-    if 'GDP per Capita (Current Prices)' not in merged_data.columns:
-        st.warning("La colonne 'GDP per Capita (Current Prices)' n'a pas été trouvée dans les données fusionnées.")
+    # Vérifier si la variable sélectionnée existe après la fusion
+    if variable_col not in merged_data.columns:
+        st.warning(f"La colonne '{variable_col}' n'a pas été trouvée dans les données fusionnées.")
         return
 
     # Création de la carte choroplèthe
@@ -50,11 +56,11 @@ def display():
         merged_data,
         geojson=merged_data.geometry,
         locations=merged_data.index,
-        color="GDP per Capita (Current Prices)",
+        color=variable_col,
         color_continuous_scale="OrRd",
         hover_name="ADMIN",
         projection="mercator",
-        title='GDP per Capita in Africa'
+        title=f'{variable_col} en Afrique'
     )
 
     # Mettre à jour les géos
