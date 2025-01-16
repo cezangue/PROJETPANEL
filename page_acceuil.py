@@ -36,7 +36,7 @@ def display_home_page():
     )
 
     # Affichage du titre défilant
-    st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1></div>", unsafe_allow_html=True)
+    st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne. mail:cezangue@gmail.com</h1></div>", unsafe_allow_html=True)
 
     # Affichage de l'image
     st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
