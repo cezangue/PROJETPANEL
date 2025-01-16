@@ -59,8 +59,6 @@ def display_visualisation():
 
     # Contenu principal
     st.markdown("<div class='main'>", unsafe_allow_html=True)
-    st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1></div>", unsafe_allow_html=True)
-    st.markdown('<h2>Bonne navigation</h2>', unsafe_allow_html=True)
     st.write("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
     st.write("Pour voir le contenu d'une section, il vous suffit de cliquer sur le nom correspondant pour y accéder.")
     st.markdown("</div>", unsafe_allow_html=True)
