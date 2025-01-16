@@ -23,12 +23,11 @@ def display_visualisation():
     st.markdown(
         """
         <style>
-        body {
+        .stApp {
             background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
             background-size: cover; /* Couvre toute la page */
             background-repeat: no-repeat; /* Ne pas répéter l'image */
             color: black; /* Couleur du texte noire pour contraste */
-            font-family: Arial, sans-serif;
         }
         .main {
             background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent pour le contenu */
@@ -38,23 +37,10 @@ def display_visualisation():
         h1 {
             font-size: 2.5em;
             font-weight: bold;
-            animation: text-animation 10s linear infinite;
             text-shadow: 2px 2px 4px #000000;
         }
-        @keyframes text-animation {
-            0% { transform: translateX(-100%); opacity: 0; }
-            10% { transform: translateX(0%); opacity: 1; }
-            90% { transform: translateX(0%); opacity: 1; }
-            100% { transform: translateX(100%); opacity: 0; }
-        }
         h2 {
-            animation: fade 3s ease-in-out infinite alternate;
             color: #ADD8E6;
-        }
-        @keyframes fade {
-            0% { opacity: 0.2; color: #ADD8E6; }
-            50% { opacity: 1; color: #87CEEB; }
-            100% { opacity: 0.2; color: #ADD8E8; }
         }
         </style>
         """,
