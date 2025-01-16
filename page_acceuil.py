@@ -3,9 +3,6 @@ import streamlit as st
 # Définir la configuration de la page
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
 
-# Définir le titre de l'application
-st.title("Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en afrique sub-saharienne")
-
 # Fonction pour créer des onglets
 def display_tabs():
     tabs = ["Volet de visualisation des indicateurs", "Autre page 1", "Autre page 2"]
@@ -39,9 +36,14 @@ def display_visualisation():
             font-size: 2.5em;
             font-weight: bold;
             text-shadow: 2px 2px 4px #000000;
+            animation: blink 1s step-start infinite; /* Animation clignotante */
         }
         h2 {
             color: #ADD8E6;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
         </style>
         """,
@@ -53,7 +55,7 @@ def display_visualisation():
 
     # Contenu principal
     st.markdown("<div class='main'>", unsafe_allow_html=True)
-    st.markdown("""<h1>TAGNE TCHINDA VOUS SOUHAITE LA BIENVENUE DANS L'ESPACE D'ANALYSE DES EFFETS DU CHANGEMENT CLIMATIQUE EN AFRIQUE SUB-SAHARIENNE</h1>""", unsafe_allow_html=True)
+    st.markdown("""<h1>PAGE D'ACCUEIL: TAGNE TCHINDA VOUS SOUHAITE LA BIENVENUE DANS L'ESPACE D'ANALYSE DES EFFETS DU CHANGEMENT CLIMATIQUE EN AFRIQUE SUB-SAHARIENNE</h1>""", unsafe_allow_html=True)
     st.markdown('<h2>Bonne navigation</h2>', unsafe_allow_html=True)
     st.write("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
     st.write("Pour voir le contenu d'une section, il vous suffit de cliquer sur le nom correspondant pour y accéder.")
