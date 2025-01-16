@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
 
 # Définir le titre de l'application
-st.title("Page d'Accueil")
+st.title("Page d'Accueil: TAGNE TCHINDA VOUS SOUHAITE LA BIENVENUE DANS L'ESPACE D'ANALYSE DES EFFETS DU CHANGEMENT CLIMATIQUE EN AFRIQUE SUB-SAHARIENNE")
 
 # Fonction pour créer des onglets
 def display_tabs():
