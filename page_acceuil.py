@@ -1,4 +1,8 @@
 import streamlit as st
+import Volet_de_visualisation_des_indicateurs
+import Analyse_de_stationarité_des_indicateurs
+import modelisation_de_panel# Assurez-vous que le nom du fichier est correct
+
 
 # Définir la configuration de la page
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
@@ -12,12 +16,20 @@ def display_tabs():
     tabs = ["Volet de visualisation des indicateurs", "Analyse des stationnarité des séries", "Modélisation en Panel"]
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
+    #if selected_tab == "Volet de visualisation des indicateurs":
+    #    display_visualisation()
+   # elif selected_tab == "Analyse des stationnarité des séries":
+ #       st.write("Contenu de l'analyse des stationnarité des séries")
+  #  elif selected_tab == "Modélisation en Panel":
+   #     st.write("Contenu de la modélisation en Panel")
     if selected_tab == "Volet de visualisation des indicateurs":
-        display_visualisation()
+        Volet_de_visualisation_des_indicateurs.display()  # Appel à la fonction d'affichage
     elif selected_tab == "Analyse des stationnarité des séries":
-        st.write("Contenu de l'analyse des stationnarité des séries")
+#        st.write("Contenu de l'analyse des stationnarité des séries")
+         Analyse_de_stationarité_des_indicateurs.display()  # Appel à la fonction d'affichage
     elif selected_tab == "Modélisation en Panel":
-        st.write("Contenu de la modélisation en Panel")
+        modelisation_de_panel.display()
+#        st.write("Contenu de la modélisation en Panel")
 
 # Fonction pour afficher le contenu de la visualisation
 def display_visualisation():
