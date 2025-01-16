@@ -56,7 +56,6 @@ def display_visualisation():
 
     # Affichage de l'image pour le dépannage
     st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
-
     # Contenu principal
     st.markdown("<div class='main'>", unsafe_allow_html=True)
     st.write("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
