@@ -4,8 +4,9 @@ import streamlit as st
 st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
 
 # Définir le titre de l'application
-st.markdown("<h1 style='text-align: center;'>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1>", unsafe_allow_html=True)
-
+#st.markdown("<h1 style='text-align: center;'>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1>", unsafe_allow_html=True)
+st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1></div>", unsafe_allow_html=True)
+st.markdown('<h2>Bonne navigation</h2>', unsafe_allow_html=True)
 # Fonction pour créer des onglets
 def display_tabs():
     tabs = ["Volet de visualisation des indicateurs", "Analyse des stationnarité des séries", "Modélisation en Panel"]
