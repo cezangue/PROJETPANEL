@@ -14,7 +14,7 @@ def display_tabs():
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
     if selected_tab == "Volet de visualisation des indicateurs":
-        import Volet_de_visualisation_des_indicateurs as vvi
+        import  Volet_de_visualisation_des_indicateurs.py as vvi
         vvi.display()  # Appel à la fonction d'affichage du fichier correspondant
     elif selected_tab == "Analyse des stationnarité des séries":
         import Analyse_des_stationnarite_des_series as ass
