@@ -39,15 +39,9 @@ def display_visualisation():
             100% { transform: translateX(-100%); }
         }
         .main {
-            display: flex; /* Flexbox pour aligner les éléments */
+            display: flex; /* Utiliser flexbox pour aligner le contenu */
             align-items: flex-start; /* Alignement en haut */
-            height: 100vh; /* Hauteur de la section */
             padding: 20px; /* Ajout de padding pour le contenu */
-        }
-        h2 {
-            color: #ADD8E6;
-            flex: 1; /* Permet au texte de prendre le reste de l'espace */
-            text-align: center;
         }
         .image-container {
             width: 30%; /* Largeur du cadre de l'image */
@@ -55,6 +49,11 @@ def display_visualisation():
             border: 2px solid #000; /* Bordure noire */
             border-radius: 10px; /* Coins arrondis */
             margin-right: 20px; /* Marge à droite */
+        }
+        h2 {
+            color: #ADD8E6;
+            flex: 1; /* Permet au texte de prendre le reste de l'espace */
+            text-align: center; /* Centrer le texte */
         }
         </style>
         """,
