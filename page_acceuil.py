@@ -24,9 +24,7 @@ def display_visualisation():
         """
         <style>
         .stApp {
-            background-image: url('pages de navigation/Changement_climatique.JPG'); /* Chemin de l'image de fond */
-            background-size: cover; /* Couvre toute la page */
-            background-repeat: no-repeat; /* Ne pas répéter l'image */
+            background-color: orange; /* Fond orange */
             color: black; /* Couleur du texte noire pour contraste */
         }
         .main {
