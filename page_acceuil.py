@@ -38,9 +38,6 @@ def display_home_page():
     # Affichage du titre défilant
     st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1></div>", unsafe_allow_html=True)
 
-    # Fonction pour créer des onglets
-    display_tabs()  # Appel de la fonction pour afficher les onglets
-
     # Affichage de l'image
     st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
 
@@ -56,30 +53,25 @@ def display_tabs():
     tabs = ["Volet de visualisation des indicateurs", "Analyse des stationnarité des séries", "Modélisation en Panel"]
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
-    if selected_tab == "Volet de visualisation des indicateurs":
-        st.session_state.page = "visualisation"  # Mettre à jour l'état de la page
-        st.experimental_rerun()  # Redémarrer l'application pour charger la nouvelle page
-    elif selected_tab == "Analyse des stationnarité des séries":
-        st.session_state.page = "analyse"
-        st.experimental_rerun()
-    elif selected_tab == "Modélisation en Panel":
-        st.session_state.page = "modelisation"
-        st.experimental_rerun()
+    # Mettre à jour l'état de la page en fonction de l'onglet sélectionné
+    st.session_state.page = selected_tab
 
 # Vérifier quelle page afficher
 if 'page' not in st.session_state:
     st.session_state.page = "accueil"  # Page par défaut
 
-# Appel de la fonction pour afficher la page d'accueil
-if st.session_state.page == "accueil":
-    display_home_page()
+# Appel de la fonction pour afficher les onglets
+display_tabs()
+
+# Logique pour afficher la page d'accueil ou les autres pages
+if st.session_state.page == "Volet de visualisation des indicateurs":
+    import Volet_de_visualisation_des_indicateurs as vvi
+    vvi.display()
+elif st.session_state.page == "Analyse des stationnarité des séries":
+    import Analyse_des_stationnarite_des_series as ass
+    ass.display()
+elif st.session_state.page == "Modélisation en Panel":
+    import Modelisation_en_Panel as mp
+    mp.display()
 else:
-    if st.session_state.page == "visualisation":
-        import Volet_de_visualisation_des_indicateurs as vvi
-        vvi.display()
-    elif st.session_state.page == "analyse":
-        import Analyse_des_stationnarite_des_series as ass
-        ass.display()
-    elif st.session_state.page == "modelisation":
-        import Modelisation_en_Panel as mp
-        mp.display()
+    display_home_page()  # Afficher la page d'accueil par défaut
