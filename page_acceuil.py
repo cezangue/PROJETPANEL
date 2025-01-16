@@ -38,6 +38,9 @@ def display_home_page():
     # Affichage du titre défilant
     st.markdown("<div class='scroll-text'><h1>Page d'Accueil: TAGNE TCHINDA vous souhaite la bienvenue dans l'espace d'analyse des effets du changement climatique en Afrique sub-saharienne</h1></div>", unsafe_allow_html=True)
 
+    # Fonction pour créer des onglets
+    display_tabs()  # Appel de la fonction pour afficher les onglets
+
     # Affichage de l'image
     st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
 
@@ -63,11 +66,14 @@ def display_tabs():
         st.session_state.page = "modelisation"
         st.experimental_rerun()
 
-# Appel de la fonction pour afficher les onglets
-display_tabs()
-
 # Vérifier quelle page afficher
-if 'page' in st.session_state:
+if 'page' not in st.session_state:
+    st.session_state.page = "accueil"  # Page par défaut
+
+# Appel de la fonction pour afficher la page d'accueil
+if st.session_state.page == "accueil":
+    display_home_page()
+else:
     if st.session_state.page == "visualisation":
         import Volet_de_visualisation_des_indicateurs as vvi
         vvi.display()
@@ -77,9 +83,3 @@ if 'page' in st.session_state:
     elif st.session_state.page == "modelisation":
         import Modelisation_en_Panel as mp
         mp.display()
-else:
-    st.session_state.page = "accueil"  # Page par défaut
-
-# Appel de la fonction pour afficher la page d'accueil
-if st.session_state.page == "accueil":
-    display_home_page()
