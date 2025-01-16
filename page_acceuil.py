@@ -1,11 +1,14 @@
 import streamlit as st
 
+# Définir la configuration de la page
+st.set_page_config(page_title="Page d'Accueil", page_icon="🏠")
+
 # Définir le titre de l'application
 st.title("Page d'Accueil")
 
 # Fonction pour créer des onglets
 def display_tabs():
-    tabs = ["Volet de visualisation des indicateurs", "Autre page 1", "Autre page 2"]  # Remplacer par des noms réels si nécessaire
+    tabs = ["Volet de visualisation des indicateurs", "Autre page 1", "Autre page 2"]
     selected_tab = st.selectbox("Choisissez une option :", tabs)
 
     if selected_tab == "Volet de visualisation des indicateurs":
@@ -20,7 +23,7 @@ def display_visualisation():
     st.markdown(
         """
         <style>
-        body {
+        .main {
             background-color: #FFFF00; /* Couleur de fond jaune */
             color: black; /* Couleur du texte noire pour contraste */
             font-family: Arial, sans-serif;
@@ -55,7 +58,7 @@ def display_visualisation():
     st.markdown('<h2>Bonne navigation</h2>', unsafe_allow_html=True)
 
     # Ajouter l'image du drapeau depuis le répertoire local
-    st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)  # Assurez-vous que le chemin est correct
+    st.image("pages de navigation/Changement_climatique.JPG", caption="Changement Climatique", use_container_width=True)
 
     st.write("Cette page, fruit du travail de TAGNE TCHINDA RINEL, nous vous proposons une vue sur la base de données utilisée pour faire des analyses, la description des différentes chroniques retenues, et l'analyse de la stationnarité des chroniques.")
     st.write("Pour voir le contenu d'une section, il vous suffit de cliquer sur le nom correspondant pour y accéder.")
