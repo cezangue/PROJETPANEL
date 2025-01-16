@@ -39,24 +39,22 @@ def display_visualisation():
             100% { transform: translateX(-100%); }
         }
         .main {
-            background-size: cover; /* Couvre toute la section */
-            background-repeat: no-repeat; /* Ne pas répéter l'image */
-            background-position: top center; /* Positionner l'image en haut */
+            display: flex; /* Flexbox pour aligner les éléments */
+            align-items: flex-start; /* Alignement en haut */
             height: 100vh; /* Hauteur de la section */
             padding: 20px; /* Ajout de padding pour le contenu */
-            border-radius: 10px; /* Arrondir les coins */
         }
         h2 {
             color: #ADD8E6;
+            flex: 1; /* Permet au texte de prendre le reste de l'espace */
             text-align: center;
         }
         .image-container {
-            float: left;
             width: 30%; /* Largeur du cadre de l'image */
             padding: 10px;
             border: 2px solid #000; /* Bordure noire */
             border-radius: 10px; /* Coins arrondis */
-            margin-right: 10px; /* Marge à droite */
+            margin-right: 20px; /* Marge à droite */
         }
         </style>
         """,
