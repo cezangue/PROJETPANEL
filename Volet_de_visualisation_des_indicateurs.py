@@ -9,7 +9,7 @@ def display():
 
     # Chargement du shapefile
     try:
-        africa = gpd.read_file("pages de navigation/shapefile_Afrique.shp")
+        africa = gpd.read_file("pages de navigation/ne_110m_admin_0_countries.shp")
     except Exception as e:
         st.error(f"Erreur lors du chargement du shapefile : {e}")
         return
