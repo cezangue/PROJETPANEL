@@ -4,3 +4,4 @@ pandas
 streamlit-aggrid
 plotly
 statsmodels
+geopandas
